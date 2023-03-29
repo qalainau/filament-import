@@ -8,6 +8,7 @@ use Konnco\FilamentImport\Concerns\HasFieldMutation;
 use Konnco\FilamentImport\Concerns\HasFieldPlaceholder;
 use Konnco\FilamentImport\Concerns\HasFieldRequire;
 use Konnco\FilamentImport\Concerns\HasFieldValidation;
+use Konnco\FilamentImport\Concerns\HasFieldDefault;
 
 class ImportField
 {
@@ -17,6 +18,7 @@ class ImportField
     use HasFieldLabel;
     use HasFieldRequire;
     use HasFieldValidation;
+    use HasFieldDefault;
 
     public function __construct(private string $name)
     {

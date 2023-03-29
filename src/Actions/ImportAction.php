@@ -162,7 +162,11 @@ class ImportAction extends Action
                     $options = $this->toCollection($filePath)->first()?->first()->filter(fn ($value) => $value != null)->toArray();
                 }
 
-                $selected = array_search($field->getName(), $options);
+                if($field->getDefault()==null){
+                    $field->default($field->getName());
+                }
+                $selected = array_search($field->getDefault(), $options);
+
                 if ($selected != false) {
                     $set($field->getName(), $selected);
                 }
