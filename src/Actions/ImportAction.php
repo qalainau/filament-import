@@ -167,7 +167,8 @@ class ImportAction extends Action
                 }
                 $selected = array_search($field->getDefault(), $options);
 
-                if ($selected != false) {
+
+                if ($selected !== false) {
                     $set($field->getName(), $selected);
                 }
 
